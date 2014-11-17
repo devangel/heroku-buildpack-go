@@ -85,7 +85,7 @@ fi
 
 if test -d $cache/$ver/go
 then
-    echo "-----> Using $ver"
+    echo "-----> Using $ver from $cache"
 else
     rm -rf $cache/* # be sure not to build up cruft
     mkdir -p $cache/$ver
