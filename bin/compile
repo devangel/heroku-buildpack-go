@@ -58,8 +58,8 @@ virtualenv() {
 name=$(<$build/Godeps/Godeps.json jq -r .ImportPath)
 ver=$(<$build/Godeps/Godeps.json jq -r .GoVersion)
 
-file=${GOFILE:-$ver.$(uname|tr A-Z a-z)-amd64$(platext $ver).tar.gz}
-url=${GOURL:-$(urlfor $ver $file)}
+#file=${GOFILE:-$ver.$(uname|tr A-Z a-z)-amd64$(platext $ver).tar.gz}
+#url=${GOURL:-$(urlfor $ver $file)}
 
 if test -e $build/bin && ! test -d $build/bin
 then
