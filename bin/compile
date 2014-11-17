@@ -67,7 +67,7 @@ else
 #elif test -f $build/.godir
 #then
     name="github.com/devangel/force" #$(cat $build/.godir)
-    ver="go version go1.1.2 linux/amd64" #go${GOVERSION:-1.3}
+    ver="go1.2.1" #go${GOVERSION:-1.3}
 #else
 #    echo >&2 " !     A .godir is required. For instructions:"
 #    echo >&2 " !     http://mmcgrana.github.io/2012/09/getting-started-with-go-on-heroku"
