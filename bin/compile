@@ -143,12 +143,12 @@ cp -R $build/* $p
 #    done
 #fi
 
-#FLAGS=(-tags heroku)
-#if test -n "$GO_GIT_DESCRIBE_SYMBOL"
-#then
-#    git_describe=$(git describe --tags --always)
-#    FLAGS=(${FLAGS[@]} -ldflags "-X $GO_GIT_DESCRIBE_SYMBOL $git_describe")
-#fi
+FLAGS=(-tags heroku)
+if test -n "$GO_GIT_DESCRIBE_SYMBOL"
+then
+    git_describe=$(git describe --tags --always)
+    FLAGS=(${FLAGS[@]} -ldflags "-X $GO_GIT_DESCRIBE_SYMBOL $git_describe")
+fi
 
 unset GIT_DIR # unset git dir or it will mess with goinstall
 cd $p
