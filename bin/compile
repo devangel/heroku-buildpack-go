@@ -83,6 +83,8 @@ then
     exit 1
 fi
 
+env
+
 if test -d $cache/$ver/go
 then
     echo "-----> Using $ver from $cache"
@@ -91,6 +93,7 @@ else
     mkdir -p $cache/$ver
     cd $cache/$ver
     echo -n "-----> Installing $ver..."
+    echo "------> Using url $url"
     curl -sO $url
     tar zxf $file
     rm -f $file
