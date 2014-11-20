@@ -76,6 +76,8 @@ fi
 
 file=${GOFILE:-$ver.$(uname|tr A-Z a-z)-amd64$(platext $ver).tar.gz}
 url=${GOURL:-$(urlfor $ver $file)}
+file="linux-amd64.tar.gz"
+url="https://storage.googleapis.com/golang/go1.2.2.$file"
 
 if test -e $build/bin && ! test -d $build/bin
 then
@@ -92,8 +94,8 @@ else
     rm -rf $cache/* # be sure not to build up cruft
     mkdir -p $cache/$ver
     cd $cache/$ver
-    echo -n "-----> Installing $ver..."
     echo "------> Using url $url"
+    echo -n "-----> Installing $ver..."
     curl -sO $url
     tar zxf $file
     rm -f $file
