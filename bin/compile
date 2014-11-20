@@ -96,7 +96,7 @@ else
     cd $cache/$ver
     echo "------> Using url $url"
     echo -n "-----> Installing $ver..."
-    curl -sO $url | tar -zxf
+    curl -sO $url | tar -zxf -
     #tar zxf $file
     #rm -f $file
     echo " done"
